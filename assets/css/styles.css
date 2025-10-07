@@ -931,19 +931,19 @@ body::-webkit-scrollbar-thumb {
 
 
 }
-.image-container {
-  background-color: #fff7f0; /* light bg */
-  /* border-radius: 16px; */
+
+
+/* .image-container {
+  background-color: #fff7f0; 
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 250px; /* adjust height */
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+  height: 250px; 
 }
 
 .promise-img {
-  width: 280px; /* reduced image size */
+  width: 280px; 
   height: auto;
   object-fit: contain;
-}
+} */
