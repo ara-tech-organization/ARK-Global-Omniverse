@@ -1002,23 +1002,43 @@
 </li>
 
 
-      <!-- Solution Boxes Container -->
-     <li>
+<!-- Solutions Section -->
+<li>
   <div class="solutions-horizontal" 
-       style="display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: stretch; gap: 24px; margin-left: 0; padding-left: 20px;">
-       
+       style="
+         display: flex;
+         flex-wrap: wrap;
+         gap: 16px;
+         margin-left: 20px;
+       ">
+
     <!-- Solution 1 -->
     <a href="https://araschoolmate.com/" target="_blank" class="solution-box"
-       style="background-color: #fafafa; padding: 16px 20px; border-radius: 8px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 380px; flex: 1; border: 1px solid #f3f3f3; transition: transform 0.2s, color 0.2s; height: 150px;">
+       style="
+         background-color: #fafafa;
+         padding: 16px 20px;
+         border-radius: 8px;
+         text-decoration: none;
+         color: inherit;
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         width: 380px;
+         flex: 1;
+         border: 1px solid #f3f3f3;
+         transition: transform 0.2s, color 0.2s;
+         height: 150px;
+       ">
        
       <div class="solution-icon" style="flex-shrink: 0;">
-        <img src="assets/img/Group 586.png" alt="Happy face" style="width: 40px; height: 40px; object-fit: contain;" />
+        <img src="assets/img/Group 586.png" alt="Happy face" 
+             style="width: 40px; height: 40px; object-fit: contain;" />
       </div>
       <div class="solution-text" style="display: flex; flex-direction: column; justify-content: center;">
         <div class="solution-title" style="font-weight: 600; margin-bottom: 4px;">
-          SchoolMate -> <span class="arrow-icon">→</span>
+          SchoolMate → 
         </div>
-        <div class="solution-description" style="font-size: 0.9rem; line-height: 1.3rem; color: #555;">
+        <div class="solution-description" style="font-size: 0.9rem; line-height: 1.2rem; color: #555;">
           SchoolMate is a smart platform for easy school management and parent communication.
         </div>
       </div>
@@ -1026,16 +1046,31 @@
 
     <!-- Solution 2 -->
     <a href="https://discovermarketing.co/" target="_blank" class="solution-box"
-       style="background-color: #fafafa; padding: 16px 20px; border-radius: 8px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 380px; flex: 1; border: 1px solid #f3f3f3; transition: transform 0.2s, color 0.2s; height: 150px;">
+       style="
+         background-color: #fafafa;
+         padding: 16px 20px;
+         border-radius: 8px;
+         text-decoration: none;
+         color: inherit;
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         width: 380px;
+         flex: 1;
+         border: 1px solid #f3f3f3;
+         transition: transform 0.2s, color 0.2s;
+         height: 150px;
+       ">
        
       <div class="solution-icon" style="flex-shrink: 0;">
-        <img src="assets/img/Ara discoveries logo 1.png" alt="Marketing icon" style="width: 40px; height: 40px; object-fit: contain;" />
+        <img src="assets/img/Ara discoveries logo 1.png" alt="Marketing icon" 
+             style="width: 40px; height: 40px; object-fit: contain;" />
       </div>
       <div class="solution-text" style="display: flex; flex-direction: column; justify-content: center;">
         <div class="solution-title" style="font-weight: 600; margin-bottom: 4px;">
-          Digital Marketing -><span class="arrow-icon">→</span>
+          Digital Marketing →
         </div>
-        <div class="solution-description" style="font-size: 0.9rem; line-height: 1.3rem; color: #555;">
+        <div class="solution-description" style="font-size: 0.9rem; line-height: 1.2rem; color: #555;">
           A smart partner for effortless brand growth and customer connection.
         </div>
       </div>
@@ -1043,6 +1078,57 @@
 
   </div>
 </li>
+
+<!-- --- RESPONSIVE INLINE STYLES --- -->
+<style>
+  /* Hover effect */
+  .solution-box:hover {
+    transform: translateY(-4px);
+    color: #3420ed;
+  }
+
+  /* --- Tablets (<=992px) --- */
+  @media (max-width: 992px) {
+    .solutions-horizontal {
+      justify-content: center;
+      margin-left: 0;
+    }
+    .solution-box {
+      width: 45%;
+      margin: 10px auto;
+    }
+    .solution-icon img {
+      width: 36px !important;
+      height: 36px !important;
+    }
+    .solution-description {
+      font-size: 0.85rem !important;
+    }
+  }
+
+  /* --- Phones (<=600px) --- */
+  @media (max-width: 600px) {
+    .solutions-horizontal {
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      gap: 12px;
+    }
+    .solution-box {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .solution-icon img {
+      width: 32px !important;
+      height: 32px !important;
+    }
+    .solution-description {
+      font-size: 0.8rem !important;
+      line-height: 1.1rem !important;
+    }
+  }
+</style>
+
 
 
     </ul>
