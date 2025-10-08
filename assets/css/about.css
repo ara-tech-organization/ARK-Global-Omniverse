@@ -21,13 +21,13 @@
     }
 
 .hero-text p .red {
-  color: #010165;
+  color: #5e3bee;
   font-size: 70px;
   font-weight: 800;
 }
 
 .hero-text p span {
-  color: #4a4afe;
+  color: #5e3bee;
 }
 
 .hero-text p {
@@ -409,14 +409,15 @@
 
 .card:hover {
   border-color: #8ca2e5;
+  box-shadow: 0 6px 16px rgba(140, 162, 229, 0.4);
   transform: translateY(-5px);
 }
 
-.about-icon {
+/* .about-icon {
   font-size: 30px;
   margin-bottom: 15px;
   color: #8ca2e5;
-}
+} */
 
 .card h3 {
   font-size: 1.1rem;

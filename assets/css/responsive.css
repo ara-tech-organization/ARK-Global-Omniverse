@@ -144,7 +144,7 @@
   width: 110%;
   height: 100%;
   /* background: url("/assets/img/Green.png") no-repeat center center; */
-background: linear-gradient(to right, #000000, #070707);
+background: linear-gradient(to right, #a70ab3, #a70ab3);
 
 
   background-size: cover;
@@ -720,14 +720,14 @@ background: linear-gradient(to right, #000000, #070707);
   font-size: 40px;
 }
 .section--connect .btn {
-  border: 2px solid #4a4afe;
+  border: 2px solid #010165;
   border-radius: 20px;
-  color: #4a4afe;
+  color: #010165;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .section--connect .btn:hover {
-  background-color: #4a4afe;
+  background-color: #010165;
   color: var(--ara-light-color);
 }
 
@@ -751,13 +751,11 @@ background: linear-gradient(to right, #000000, #070707);
   line-height: 1;
 }
 
-.faq-item .faq-answer p {
-  color: #525252;
-}
-
 .faq-item .faq-answer {
   display: none;
+  max-height: 0;
 }
+
 
 .faq-item {
   cursor: pointer;
@@ -890,7 +888,7 @@ background: linear-gradient(to right, #000000, #070707);
 }
 
 .section-journey .linkedin:hover {
-  color: rgb(11, 102, 195) !important;
+  color: rgb(11, 45, 195) !important;
 }
 
 .section-journey .dribble:hover {
@@ -907,21 +905,42 @@ background: linear-gradient(to right, #000000, #070707);
 
 .section-footer {
   background: linear-gradient(to right, #022051, #022051);
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.section-footer h4 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .section-footer a {
   text-decoration: none;
-  color: #ffffff;
-  transition: color 0.4s;
-}
-
-.section-footer h4 {
-  color: #fff;
+  color: #dcdcdc;
+  font-size: 15px;
+  transition: all 0.3s ease;
 }
 
 .section-footer a:hover {
-  color: #000000;
+  color: #ffffff;
+  text-decoration: underline;
 }
+
+.section-footer img {
+  filter: brightness(0) invert(1);
+}
+
+.section-footer p {
+  color: #fbf7f7;
+}
+
+@media (max-width: 768px) {
+  .section-footer {
+    text-align: center;
+  }
+}
+
 
 .copyright {
   background-color: #FFFFFF;
@@ -1394,15 +1413,18 @@ background: linear-gradient(to right, #000000, #070707);
   }
 }
 
-@keyframes moves {
-  0%,
-  100% {
+@keyframes scrollUpDown {
+  0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
+
 
 .section--industries .card .icon-img {
   max-width: 80px;

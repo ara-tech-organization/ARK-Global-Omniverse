@@ -124,7 +124,7 @@
               <a href="index.html" class="nav__link ara--nav-link">Home</a>
             </li>
             <!--=============== DROPDOWN 1 ===============-->
-             <li class="dropdown__item ara--nav-dropdown-item">
+         <li class="dropdown__item ara--nav-dropdown-item">
   <div class="ara--nav-link dropdown__button ara--nav-dropdown-button">
     Solutions
     <i class="ri-arrow-down-s-line dropdown__arrow ara--nav-dropdown-arrow"></i>
@@ -135,49 +135,59 @@
     <ul class="dropdown__list ara--nav-dropdown-list">
 
       <!-- Heading aligned with items -->
-      <li class="dropdown-heading-item">
-        <div class="dropdown-heading">Solutions</div>
-      </li>
+   <li class="dropdown-heading-item" 
+    style="margin-left: -3px !important; padding-left: 0 !important; display: block;">
+  <div class="dropdown-heading"></div>
+</li>
+
 
       <!-- Solution Boxes Container -->
-      <li>
-        <div class="solutions-horizontal">
-
-          <!-- Solution 1 -->
-          <a href="https://araschoolmate.com/" target="_blank" class="solution-box">
-            <div class="solution-icon">
-              <img src="assets/img/Group 586.png" alt="Happy face" />
-            </div>
-            <div class="solution-text">
-              <div class="solution-title">
-                SchoolMate -> <span class="arrow-icon">→</span>
-              </div>
-              <div class="solution-description">
-                SchoolMate is a smart platform for <br> easy school management and <br> parent communication.
-              </div>
-            </div>
-          </a>
-
-          <!-- Solution 2 -->
-          <a href="https://discovermarketing.co/" target="_blank" class="solution-box">
-            <div class="solution-icon">
-              <img src="assets/img/Ara discoveries logo 1.png" alt="Marketing icon" />
-            </div>
-            <div class="solution-text">
-              <div class="solution-title">
-                Digital Marketing -><span class="arrow-icon">→</span>
-              </div>
-              <div class="solution-description">
-                A smart partner for effortless brand growth and customer connection
-              </div>
-            </div>
-          </a>
-
+     <li>
+  <div class="solutions-horizontal" 
+       style="display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: stretch; gap: 24px; margin-left: 0; padding-left: 20px;">
+       
+    <!-- Solution 1 -->
+    <a href="https://araschoolmate.com/" target="_blank" class="solution-box"
+       style="background-color: #fafafa; padding: 16px 20px; border-radius: 8px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 380px; flex: 1; border: 1px solid #f3f3f3; transition: transform 0.2s, color 0.2s; height: 150px;">
+       
+      <div class="solution-icon" style="flex-shrink: 0;">
+        <img src="assets/img/Group 586.png" alt="Happy face" style="width: 40px; height: 40px; object-fit: contain;" />
+      </div>
+      <div class="solution-text" style="display: flex; flex-direction: column; justify-content: center;">
+        <div class="solution-title" style="font-weight: 600; margin-bottom: 4px;">
+          SchoolMate -> <span class="arrow-icon">→</span>
         </div>
-      </li>
+        <div class="solution-description" style="font-size: 0.9rem; line-height: 1.3rem; color: #555;">
+          SchoolMate is a smart platform for easy school management and parent communication.
+        </div>
+      </div>
+    </a>
+
+    <!-- Solution 2 -->
+    <a href="https://discovermarketing.co/" target="_blank" class="solution-box"
+       style="background-color: #fafafa; padding: 16px 20px; border-radius: 8px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px; width: 380px; flex: 1; border: 1px solid #f3f3f3; transition: transform 0.2s, color 0.2s; height: 150px;">
+       
+      <div class="solution-icon" style="flex-shrink: 0;">
+        <img src="assets/img/Ara discoveries logo 1.png" alt="Marketing icon" style="width: 40px; height: 40px; object-fit: contain;" />
+      </div>
+      <div class="solution-text" style="display: flex; flex-direction: column; justify-content: center;">
+        <div class="solution-title" style="font-weight: 600; margin-bottom: 4px;">
+          Digital Marketing -><span class="arrow-icon">→</span>
+        </div>
+        <div class="solution-description" style="font-size: 0.9rem; line-height: 1.3rem; color: #555;">
+          A smart partner for effortless brand growth and customer connection.
+        </div>
+      </div>
+    </a>
+
+  </div>
+</li>
+
+
     </ul>
   </div>
 </li>
+
 
 
             <li>
@@ -244,7 +254,7 @@
           src="assets/img/HM Dashboard.png"
           alt="Small Overlay Image"
           class="small-img"
-          data-aos="fade-down"
+          data-aos="fade-up"
           data-aos-duration="1500"
         />
       </div>
@@ -302,82 +312,80 @@
       digital age.
     </p>
 
-    <div class="row mx-auto g-5 mt-4">
-      <!-- 1️⃣ Card 1 -->
-      <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch">
-        <div class="card text-center p-4 w-100 h-100 shadow-sm">
-          <img
-            src="assets/img/Bubble.png"
-            class="img-fluid w-25 mx-auto"
-            alt="Speech_Bubble"
-          />
-          <h6 class="mt-3 ara-fw-bold" style="line-height: 1.7">
-            Experienced <br />
-            Tech Professionals
-          </h6>
-          <p>
-            A skilled team of experts delivering innovative, reliable, and
-            scalable technology solutions tailored to your needs.
-          </p>
-        </div>
-      </div>
+<div class="row mx-auto g-5 mt-4">
+  <!-- 1️⃣ Card 1 -->
+  <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch">
+    <div class="card text-center p-4 w-100 h-100 shadow-sm"
+         style="border: 1px solid transparent;"
+         onmouseover="this.style.border='2px solid #8ca2e5';"
+         onmouseout="this.style.border='2px solid transparent';"
+    >
+      <img src="assets/img/Bubble.png" class="img-fluid w-25 mx-auto" alt="Speech_Bubble" />
+      <h6 class="mt-3 ara-fw-bold" style="line-height: 1.7">
+        Experienced <br> Tech Professionals
+      </h6>
+      <p>
+        A skilled team of experts delivering innovative, reliable, and
+        scalable technology solutions tailored to your needs.
+      </p>
+    </div>
+  </div>
 
-      <!-- 2️⃣ Card 2 -->
-      <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch">
-        <div class="card text-center p-4 w-100 h-100 shadow-sm">
-          <img
-            src="assets/img/innovatin.png"
-            class="img-fluid w-25 mx-auto"
-            alt="Innovation"
-          />
-          <h6 class="mt-3 ara-fw-bold" style="line-height: 1.7">
-            Innovation- <br />
-            Driven Mindset
-          </h6>
-          <p>
-            Fueled by creativity and forward thinking, we embrace change to
-            deliver cutting-edge solutions that drive growth.
-          </p>
-        </div>
-      </div>
+  <!-- 2️⃣ Card 2 -->
+  <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch">
+    <div class="card text-center p-4 w-100 h-100 shadow-sm"
+         style="border: 1px solid transparent;"
+         onmouseover="this.style.border='2px solid #8ca2e5';"
+         onmouseout="this.style.border='2px solid transparent';"
+    >
+      <img src="assets/img/innovatin.png" class="img-fluid w-25 mx-auto" alt="Innovation" />
+      <h6 class="mt-3 ara-fw-bold" style="line-height: 1.7">
+        Innovation- <br> Driven Mindset
+      </h6>
+      <p>
+        Fueled by creativity and forward thinking, we embrace change to
+        deliver cutting-edge solutions that drive growth.
+      </p>
+    </div>
+  </div>
 
-      <!-- 3️⃣ Card 3 -->
-      <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch">
-        <div class="card text-center p-4 w-100 h-100 shadow-sm">
-          <img
-            src="assets/img/Customers.png"
-            class="img-fluid w-25 mx-auto"
-            alt="Customer"
-          />
-          <h6 class="mt-3 ara-fw-bold" style="line-height: 1.7">
-            Customer- <br />
-            Centric Culture
-          </h6>
-          <p>
-            Putting customers at the heart of every decision to deliver
-            meaningful experiences and lasting relationships.
-          </p>
-        </div>
-      </div>
+  <!-- 3️⃣ Card 3 -->
+  <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch">
+    <div class="card text-center p-4 w-100 h-100 shadow-sm"
+         style="border: 1px solid transparent;"
+         onmouseover="this.style.border='2px solid #8ca2e5';"
+         onmouseout="this.style.border='2px solid transparent';"
+    >
+      <img src="assets/img/Customers.png" class="img-fluid w-25 mx-auto" alt="Customer" />
+      <h6 class="mt-3 ara-fw-bold" style="line-height: 1.7">
+        Customer- <br> Centric Culture
+      </h6>
+      <p>
+        Putting customers at the heart of every decision to deliver
+        meaningful experiences and lasting relationships.
+      </p>
+    </div>
+  </div>
 
-      <!-- 4️⃣ Card 4 -->
-      <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch">
-        <div class="card text-center p-4 w-100 h-100 shadow-sm">
-          <img
-            src="assets/img/checks.png"
-            class="img-fluid w-25 mx-auto"
-            alt="Proven Track Record"
-          />
-          <h6 class="mt-3 ara-fw-bold" style="line-height: 1.7">
-            Proven <br />
-            Track Record
-          </h6>
-          <p>
-            Consistently delivering successful projects backed by measurable
-            results and satisfied clients.
-          </p>
-        </div>
-      </div>
+  <!-- 4️⃣ Card 4 -->
+  <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch">
+    <div class="card text-center p-4 w-100 h-100 shadow-sm"
+         style="border: 1px solid transparent;"
+         onmouseover="this.style.border='2px solid #8ca2e5';"
+         onmouseout="this.style.border='2px solid transparent';"
+    >
+      <img src="assets/img/checks.png" class="img-fluid w-25 mx-auto" alt="Proven Track Record" />
+      <h6 class="mt-3 ara-fw-bold" style="line-height: 1.7">
+        Proven <br> Track Record
+      </h6>
+      <p>
+        Consistently delivering successful projects backed by measurable
+        results and satisfied clients.
+      </p>
+    </div>
+  </div>
+</div>
+
     </div>
   </div>
 </section>
@@ -640,33 +648,84 @@
     <!-- ================= SECTION JOURNEY END  ===================-->
 
     <!-- ================ SECTION FOOTER START ============= -->
-    <section class="section-footer container-fluid">
-  <div class="container p-5">
+   <section class="section-footer container-fluid" style="background: linear-gradient(to right, #022051, #022051);">
+  <style>
+    .section-footer a {
+      text-decoration: none;
+      color: #dcdcdc;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .section-footer a:hover {
+      color: #ffffff !important;
+      text-decoration: underline !important;
+    }
+
+    .section-footer h4 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 10px; /* reduced from 15px */
+    }
+
+    .section-footer img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* Reduce padding for overall section */
+    .section-footer .container {
+      padding: 30px 15px; /* reduced from p-5 */
+    }
+
+    /* Reduce margin between top content and legal line */
+    .section-footer .row.mt-5 {
+      margin-top: 20px !important; /* reduced from mt-5 */
+    }
+
+    /* Legal line font adjustments */
+    .section-footer .legal-line {
+      font-size: 15px;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .section-footer .legal-line a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .section-footer .legal-line a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <div class="container">
     <!-- Top Row with Logo and Links -->
     <div class="row align-items-start justify-content-lg-evenly">
       <!-- Logo Left -->
-     <div class="col-lg-4 col-md-4 col-12 text-lg-start text-left mb-4 mb-lg-0">
-  <img
-    src="assets/img/ARK Logo White.png"
-    class="img-fluid mb-3"
-    alt="Ara Tech Logo"
-    style="max-width: 250px; margin-left: 0;"
-  />
-</div>
-
+      <div class="col-lg-4 col-md-4 col-12 text-lg-start text-center mb-4 mb-lg-0">
+        <img
+          src="assets/img/ARK Logo White.png"
+          class="img-fluid mb-3"
+          alt="Ara Tech Logo"
+          style="max-width: 250px;"
+        />
+      </div>
 
       <!-- Products -->
       <div class="col-lg-2 col-md-4 col-12 text-lg-start text-center mb-4 mb-lg-0">
         <h4 class="ara-fw-semi-bold">Products</h4>
-        <a href="#">Schoolmate</a>
+        <a href="https://araschoolmate.com/">Schoolmate</a>
       </div>
 
       <!-- Quick Links -->
       <div class="col-lg-2 col-md-4 col-12 text-lg-start text-center mb-4 mb-lg-0">
         <h4 class="ara-fw-semi-bold">Quick Links</h4>
-        <a href="#">About Us</a> <br />
-        <a href="#">Solutions</a> <br />
-        <a href="#">Contact Us</a>
+        <a href="index.html">Home</a> <br />
+        <a href="about2.html">About Us</a> <br />
+        <!-- <a href="#">Solutions</a> <br /> -->
+        <a href="organisation.html">Organisation</a> <br />
+        <a href="contactus.html">Contact Us</a>
       </div>
 
       <!-- Support -->
@@ -680,14 +739,12 @@
       <!-- Contact Us -->
       <div class="col-lg-2 col-md-4 col-12 text-lg-start text-center mb-4 mb-lg-0">
         <h4 class="ara-fw-semi-bold">Contact Us</h4>
-        <a href="#">Email</a> <br />
-        <a href="#">Phone</a> <br />
-        <a href="#">Address</a>
+        <a href="mailto:ceo@arkglobalominverse.com">Email</a> <br />
+        <a href="tel:+918903734567">Phone</a> <br />
+        <a href="contactus.html">Address</a>
       </div>
     </div>
-
-    <!-- Bottom Center Legal Line -->
-    <div class="row mt-5">
+<div class="row mt-5" >
       <div class="col-12 text-center">
         <p class="mb-0" style="font-size: 20px; color: #fbf7f7;">
           Legal :
@@ -699,7 +756,6 @@
     </div>
   </div>
 </section>
-
     <!-- ========= COPYRIGHT START ======== -->
     <div
       class="d-flex justify-content-center align-items-center w-100 copyright"
