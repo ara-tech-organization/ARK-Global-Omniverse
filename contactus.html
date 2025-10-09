@@ -441,7 +441,7 @@
   </head>
   <body>
     <!--=============== HEADER ===============-->
-   <header>
+  <header>
   <nav>
     <div class="logo">
       <a href="index.html">
@@ -453,30 +453,40 @@
 
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
+
       <li class="dropdown" id="solutions-dropdown">
         <a href="javascript:void(0)">Solutions <i class="ri-arrow-down-s-line"></i></a>
-        <div class="dropdown-content">
-          <a href="https://araschoolmate.com/" target="_blank" class="solution-box">
-            <img src="assets/img/Group 586.png" alt="SchoolMate">
-            <div>
-              <div class="solution-title">SchoolMate →</div>
-              <div class="solution-description">
-                SchoolMate is a smart platform for easy school management and parent communication.
-              </div>
-            </div>
-          </a>
 
-          <a href="https://discovermarketing.co/" target="_blank" class="solution-box">
-            <img src="assets/img/Ara discoveries logo 1.png" alt="Marketing">
-            <div>
-              <div class="solution-title">Digital Marketing →</div>
-              <div class="solution-description">
-                A smart partner for effortless brand growth and customer connection.
-              </div>
+        <!-- ✅ FULL SCREEN DROPDOWN -->
+        <div class="dropdown-fullscreen" id="solutions-menu">
+          <div class="dropdown-inner">
+            <h4 class="dropdown-heading"></h4>
+
+            <div class="solution-wrapper">
+              <a href="https://araschoolmate.com/" target="_blank" class="solution-box">
+                <img src="assets/img/Group 586.png" alt="SchoolMate" />
+                <div>
+                  <div class="solution-title">SchoolMate →</div>
+                  <div class="solution-description">
+                    SchoolMate is a smart platform for easy school management and parent communication.
+                  </div>
+                </div>
+              </a>
+
+              <a href="https://discovermarketing.co/" target="_blank" class="solution-box">
+                <img src="assets/img/Ara discoveries logo 1.png" alt="Marketing" />
+                <div>
+                  <div class="solution-title">Digital Marketing →</div>
+                  <div class="solution-description">
+                    A smart partner for effortless brand growth and customer connection.
+                  </div>
+                </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </li>
+
       <li><a href="about2.html">About Us</a></li>
       <li><a href="organisation.html">Organization</a></li>
       <li><a href="contactus.html">Contact Us</a></li>
@@ -514,9 +524,7 @@
   }
 
   .logo img {
-    width: 160px;
-    cursor: pointer;
-    transition: 0.3s ease;
+    width: 100px;
   }
 
   .nav-links {
@@ -538,72 +546,89 @@
   }
 
   .nav-links a:hover {
-    color: #2412c9;
+    color: #0072ce; /* lighter blue on hover */
+  }
+
+  .nav-links a.active {
+    color: rgb(2, 9, 88); /* dark blue for active */
   }
 
   .nav-links a.active::after {
     content: "";
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 2px;
-    background-color: #110679; /* dark blue underline for active page */
-    border-radius: 4px;
+    background-color: rgb(2, 9, 88);
+    border-radius: 2px;
   }
 
-  .dropdown {
-    position: relative;
-  }
-
-  .dropdown-content {
-    position: absolute;
-    top: 120%;
-    left: -80px;
+  /* ✅ FULL SCREEN DROPDOWN STYLE */
+  .dropdown-fullscreen {
+    position: fixed;
+    left: 0;
+    top: 70px; /* below navbar */
+    width: 100%;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     display: none;
-    flex-wrap: wrap;
-    padding: 20px;
-    gap: 16px;
-    width: 850px;
+    z-index: 999;
+    padding: 40px 0;
   }
 
-  @media (min-width: 993px) {
-    .dropdown:hover .dropdown-content {
-      display: flex;
-    }
+  .dropdown-inner {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 50px;
+  }
+
+  .dropdown-heading {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #444;
+    margin-bottom: 25px;
+  }
+
+  .solution-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
   }
 
   .solution-box {
     background: #fafafa;
     border-radius: 10px;
-    border: 1px solid #f3f3f3;
-    width: 400px;
+    border: 1px solid #eee;
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 18px;
+    gap: 16px;
+    padding: 20px;
     text-decoration: none;
     color: #000;
+    flex: 1 1 45%;
     transition: 0.3s;
   }
 
   .solution-box:hover {
     transform: translateY(-4px);
-    color: #3420ed;
+    background: #f5f5ff;
   }
 
   .solution-box img {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
   }
 
   .solution-title {
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
+  }
+
+  .dropdown-fullscreen .solution-box div {
+    text-align: left;
   }
 
   .menu-icon {
@@ -612,15 +637,11 @@
     cursor: pointer;
   }
 
-  /* Tablet + Mobile */
+  /* ✅ Responsive Mobile */
   @media (max-width: 992px) {
     nav {
       flex-wrap: wrap;
       padding: 10px 20px;
-    }
-
-    .logo img {
-      width: 130px;
     }
 
     .menu-icon {
@@ -646,33 +667,23 @@
       display: flex;
     }
 
-    .dropdown-content {
+    .dropdown-fullscreen {
       position: static;
-      width: 90%;
-      box-shadow: none;
-      padding: 10px;
-      flex-direction: column;
+      padding: 20px;
       display: none !important;
-      margin: 10px auto 0;
+      box-shadow: none;
     }
 
-    .dropdown.open .dropdown-content {
-      display: flex !important;
+    .dropdown.open .dropdown-fullscreen {
+      display: block !important;
+    }
+
+    .solution-wrapper {
+      flex-direction: column;
     }
 
     .solution-box {
-      width: 100%;
-    }
-  }
-
-  /* Extra small phones */
-  @media (max-width: 576px) {
-    .logo img {
-      width: 110px;
-    }
-
-    .nav-links {
-      gap: 15px;
+      flex: 1 1 100%;
     }
   }
 </style>
@@ -681,27 +692,46 @@
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
   const dropdown = document.getElementById('solutions-dropdown');
+  const dropdownMenu = document.getElementById('solutions-menu');
 
-  menuToggle.addEventListener('click', () => {
+  // ✅ Mobile Menu Toggle
+  menuToggle?.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
 
+  // ✅ Desktop Fullscreen Dropdown
+  dropdown.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 992) {
+      dropdownMenu.style.display = 'block';
+    }
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 992) {
+      dropdownMenu.style.display = 'none';
+    }
+  });
+
+  // ✅ Mobile dropdown toggle
   dropdown.addEventListener('click', () => {
     if (window.innerWidth <= 992) {
       dropdown.classList.toggle('open');
     }
   });
 
-  // ✅ Active link based on current page
-  const navItems = document.querySelectorAll('.nav-links a');
-  const currentPath = window.location.pathname.split('/').pop();
+  // ✅ Automatically set active menu based on current page
+  const currentPage = window.location.pathname.split("/").pop(); // e.g., "index.html"
+  const navItems = document.querySelectorAll(".nav-links a");
 
-  navItems.forEach(link => {
-    if(link.getAttribute('href') === currentPath){
-      link.classList.add('active');
+  navItems.forEach(item => {
+    if(item.getAttribute("href") === currentPage){
+      item.classList.add("active");
+    } else {
+      item.classList.remove("active");
     }
   });
 </script>
+
 
     <!--=============== HEADER END ===============-->
 
