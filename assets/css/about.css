@@ -61,7 +61,7 @@
 
 .small-img {
   position: absolute;
-  top: 470px;
+  top: 170px;
   left: -100px;
   width: 209px;
   height: 326px;
@@ -221,7 +221,7 @@
   }
 
   .small-img {
-    top: 140px;
+            top: 370px;
     left: -100px;
     width: 209px;
   }
