@@ -455,13 +455,13 @@
       <li><a href="index.html">Home</a></li>
 
       <li class="dropdown" id="solutions-dropdown">
-        <a href="javascript:void(0)">Solutions <i class="ri-arrow-down-s-line"></i></a>
+        <a href="javascript:void(0)" id="solutions-link">
+          Our Brands <i class="ri-arrow-down-s-line"></i>
+        </a>
 
         <!-- ✅ FULL SCREEN DROPDOWN -->
         <div class="dropdown-fullscreen" id="solutions-menu">
           <div class="dropdown-inner">
-            <h4 class="dropdown-heading"></h4>
-
             <div class="solution-wrapper">
               <a href="https://araschoolmate.com/" target="_blank" class="solution-box">
                 <img src="assets/img/Group 586.png" alt="SchoolMate" />
@@ -495,15 +495,8 @@
 </header>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Poppins", sans-serif;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Poppins", sans-serif; }
 
   header {
     width: 100%;
@@ -523,9 +516,7 @@
     justify-content: space-between;
   }
 
-  .logo img {
-    width: 100px;
-  }
+  .logo img { width: 100px; }
 
   .nav-links {
     display: flex;
@@ -545,15 +536,29 @@
     transition: 0.3s;
   }
 
-  .nav-links a:hover {
-    color: #0072ce; /* lighter blue on hover */
-  }
+  .nav-links a:hover { color: #0072ce; }
 
   .nav-links a.active {
-    color: rgb(2, 9, 88); /* dark blue for active */
+    color: rgb(2, 9, 88);
   }
 
   .nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(2, 9, 88);
+    border-radius: 2px;
+  }
+
+  /* ✅ highlight when dropdown open */
+  .dropdown.open > a {
+    color: rgb(2, 9, 88);
+  }
+
+  .dropdown.open > a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -568,7 +573,7 @@
   .dropdown-fullscreen {
     position: fixed;
     left: 0;
-    top: 70px; /* below navbar */
+    top: 70px;
     width: 100%;
     background: #fff;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
@@ -581,14 +586,6 @@
     max-width: 1300px;
     margin: auto;
     padding: 0 50px;
-  }
-
-  .dropdown-heading {
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: #444;
-    margin-bottom: 25px;
   }
 
   .solution-wrapper {
@@ -604,7 +601,8 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 20px;
+    padding: 10px;
+    height: 140px;
     text-decoration: none;
     color: #000;
     flex: 1 1 45%;
@@ -622,14 +620,7 @@
     object-fit: contain;
   }
 
-  .solution-title {
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-
-  .dropdown-fullscreen .solution-box div {
-    text-align: left;
-  }
+  .solution-title { font-weight: 600; margin-bottom: 5px; }
 
   .menu-icon {
     display: none;
@@ -639,14 +630,9 @@
 
   /* ✅ Responsive Mobile */
   @media (max-width: 992px) {
-    nav {
-      flex-wrap: wrap;
-      padding: 10px 20px;
-    }
+    nav { flex-wrap: wrap; padding: 10px 20px; }
 
-    .menu-icon {
-      display: block;
-    }
+    .menu-icon { display: block; }
 
     .nav-links {
       flex-direction: column;
@@ -663,9 +649,7 @@
       gap: 20px;
     }
 
-    .nav-links.active {
-      display: flex;
-    }
+    .nav-links.active { display: flex; }
 
     .dropdown-fullscreen {
       position: static;
@@ -674,17 +658,11 @@
       box-shadow: none;
     }
 
-    .dropdown.open .dropdown-fullscreen {
-      display: block !important;
-    }
+    .dropdown.open .dropdown-fullscreen { display: block !important; }
 
-    .solution-wrapper {
-      flex-direction: column;
-    }
+    .solution-wrapper { flex-direction: column; }
 
-    .solution-box {
-      flex: 1 1 100%;
-    }
+    .solution-box { flex: 1 1 100%; }
   }
 </style>
 
@@ -699,38 +677,56 @@
     navLinks.classList.toggle('active');
   });
 
-  // ✅ Desktop Fullscreen Dropdown
-  dropdown.addEventListener('mouseenter', () => {
+  // ✅ Desktop Dropdown (Click to toggle, stays open)
+  dropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
     if (window.innerWidth > 992) {
-      dropdownMenu.style.display = 'block';
-    }
-  });
-
-  dropdown.addEventListener('mouseleave', () => {
-    if (window.innerWidth > 992) {
-      dropdownMenu.style.display = 'none';
-    }
-  });
-
-  // ✅ Mobile dropdown toggle
-  dropdown.addEventListener('click', () => {
-    if (window.innerWidth <= 992) {
-      dropdown.classList.toggle('open');
-    }
-  });
-
-  // ✅ Automatically set active menu based on current page
-  const currentPage = window.location.pathname.split("/").pop(); // e.g., "index.html"
-  const navItems = document.querySelectorAll(".nav-links a");
-
-  navItems.forEach(item => {
-    if(item.getAttribute("href") === currentPage){
-      item.classList.add("active");
+      const isOpen = dropdown.classList.toggle('open');
+      dropdownMenu.style.display = isOpen ? 'block' : 'none';
+      if (isOpen) {
+        clearActiveLinks();
+      } else {
+        setActivePage();
+      }
     } else {
-      item.classList.remove("active");
+      const isOpen = dropdown.classList.toggle('open');
+      if (isOpen) {
+        clearActiveLinks();
+      } else {
+        setActivePage();
+      }
     }
   });
+
+  // ✅ Click outside to close dropdown
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target) && window.innerWidth > 992) {
+      dropdown.classList.remove('open');
+      dropdownMenu.style.display = 'none';
+      setActivePage();
+    }
+  });
+
+  // ✅ Auto highlight current page
+  const navItems = document.querySelectorAll(".nav-links a");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  function clearActiveLinks() {
+    navItems.forEach(item => item.classList.remove("active"));
+  }
+
+  function setActivePage() {
+    navItems.forEach(item => {
+      if (item.getAttribute("href") === currentPage) {
+        item.classList.add("active");
+      }
+    });
+  }
+
+  // Initial set
+  setActivePage();
 </script>
+
 
 
     <!--=============== HEADER END ===============-->

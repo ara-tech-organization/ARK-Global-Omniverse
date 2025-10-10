@@ -95,7 +95,7 @@
         text-align: center;
         padding: 12% 20px;
         position: relative;
-        margin-top: 90px;
+        /* margin-top: 90px; */
         background: linear-gradient(to bottom, #ffffff 0%, #fbf3e8 100%);
       }
 
@@ -280,105 +280,6 @@
         }
       }
 
-      /*--------------------------------- IFrame starts --------------------------------*/
-
-      .video-section {
-        text-align: center;
-        padding: 80px 20px;
-      }
-
-      .video-heading {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 30px;
-      }
-
-      .video-thumbnail-wrapper {
-        position: relative;
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-        border-radius: 12px;
-        overflow: hidden;
-      }
-
-      .video-thumbnail-img {
-        width: 100%;
-        display: block;
-        border-radius: 12px;
-        cursor: pointer;
-      }
-
-      .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-        z-index: 2;
-        transition: transform 0.3s ease;
-      }
-
-      .play-button:hover {
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-
-      .video-embed {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        aspect-ratio: 16/9;
-        height: auto;
-      }
-
-      .video-embed iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      @media (max-width: 575.98px) {
-        .video-heading {
-          font-size: 1.4rem;
-        }
-
-        .play-button svg {
-          width: 60px;
-          height: 60px;
-        }
-      }
-
-      @media (min-width: 768px) and (max-width: 991.98px) {
-        .video-heading {
-          font-size: 2rem;
-        }
-
-        .play-button svg {
-          width: 70px;
-          height: 70px;
-        }
-      }
-
-      @media (min-width: 992px) and (max-width: 1199.98px) {
-        .video-heading {
-          font-size: 2.2rem;
-        }
-      }
-
-      @media (min-width: 1200px) and (max-width: 1399.98px) {
-        .video-heading {
-          font-size: 2.4rem;
-        }
-      }
-
-      @media (min-width: 1400px) {
-        .video-heading {
-          font-size: 2.6rem;
-        }
-      }
-      /* ---------------------------IFrame Ends-------------------------------------------------------- */
       /* ---------------------------Green content------------------------------------------------------ */
       .section--green {
         padding: 80px 0;
@@ -392,7 +293,7 @@
       .section-green-left {
         position: relative;
         padding: 20px;
-        border-top: 2px solid #00965d;
+        border-top: 2px solid #a70ab3;
       }
 
 /* Add fading left border using pseudo-element */
@@ -403,7 +304,7 @@
         left: 0;
         height: 100%;
         width: 2px; /* Match border thickness */
-        background: linear-gradient(to bottom, #00965d, transparent);
+        background: linear-gradient(to bottom, #a70ab3, transparent);
         pointer-events: none;
       }
       .section-green-left .base-image {
@@ -490,7 +391,8 @@
       /* ---------------------------------   Card Carousel ----------------------------------------------- */
 
       section.carousel-section {
-        max-width: 1200px;
+        max-width: 1250px;
+        background: #f7f9fc;
         margin: auto;
         padding: 40px 20px;
         position: relative;
@@ -638,9 +540,11 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
-        max-width: 1200px;
+        max-width: 1250px;
         margin: 0 auto;
         padding: 40px 20px;
+        /* background:#f7f9fc; */
+        
       }
 
       .left-content {
@@ -750,7 +654,7 @@
       .core-values-section {
         text-align: center;
         padding: 60px 20px;
-        background: #fffdfc;
+        background: #f7f9fc;
       }
 
       .core-values-heading h2 {
@@ -955,13 +859,13 @@
       <li><a href="index.html">Home</a></li>
 
       <li class="dropdown" id="solutions-dropdown">
-        <a href="javascript:void(0)">Solutions <i class="ri-arrow-down-s-line"></i></a>
+        <a href="javascript:void(0)" id="solutions-link">
+          Our Brands <i class="ri-arrow-down-s-line"></i>
+        </a>
 
         <!-- ✅ FULL SCREEN DROPDOWN -->
         <div class="dropdown-fullscreen" id="solutions-menu">
           <div class="dropdown-inner">
-            <h4 class="dropdown-heading"></h4>
-
             <div class="solution-wrapper">
               <a href="https://araschoolmate.com/" target="_blank" class="solution-box">
                 <img src="assets/img/Group 586.png" alt="SchoolMate" />
@@ -995,15 +899,8 @@
 </header>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Poppins", sans-serif;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Poppins", sans-serif; }
 
   header {
     width: 100%;
@@ -1023,9 +920,7 @@
     justify-content: space-between;
   }
 
-  .logo img {
-    width: 100px;
-  }
+  .logo img { width: 100px; }
 
   .nav-links {
     display: flex;
@@ -1045,15 +940,29 @@
     transition: 0.3s;
   }
 
-  .nav-links a:hover {
-    color: #0072ce; /* lighter blue on hover */
-  }
+  .nav-links a:hover { color: #0072ce; }
 
   .nav-links a.active {
-    color: rgb(2, 9, 88); /* dark blue for active */
+    color: rgb(2, 9, 88);
   }
 
   .nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(2, 9, 88);
+    border-radius: 2px;
+  }
+
+  /* ✅ highlight when dropdown open */
+  .dropdown.open > a {
+    color: rgb(2, 9, 88);
+  }
+
+  .dropdown.open > a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -1068,7 +977,7 @@
   .dropdown-fullscreen {
     position: fixed;
     left: 0;
-    top: 70px; /* below navbar */
+    top: 70px;
     width: 100%;
     background: #fff;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
@@ -1081,14 +990,6 @@
     max-width: 1300px;
     margin: auto;
     padding: 0 50px;
-  }
-
-  .dropdown-heading {
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: #444;
-    margin-bottom: 25px;
   }
 
   .solution-wrapper {
@@ -1104,7 +1005,8 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 20px;
+    padding: 10px;
+    height: 140px;
     text-decoration: none;
     color: #000;
     flex: 1 1 45%;
@@ -1122,14 +1024,7 @@
     object-fit: contain;
   }
 
-  .solution-title {
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-
-  .dropdown-fullscreen .solution-box div {
-    text-align: left;
-  }
+  .solution-title { font-weight: 600; margin-bottom: 5px; }
 
   .menu-icon {
     display: none;
@@ -1139,14 +1034,9 @@
 
   /* ✅ Responsive Mobile */
   @media (max-width: 992px) {
-    nav {
-      flex-wrap: wrap;
-      padding: 10px 20px;
-    }
+    nav { flex-wrap: wrap; padding: 10px 20px; }
 
-    .menu-icon {
-      display: block;
-    }
+    .menu-icon { display: block; }
 
     .nav-links {
       flex-direction: column;
@@ -1163,9 +1053,7 @@
       gap: 20px;
     }
 
-    .nav-links.active {
-      display: flex;
-    }
+    .nav-links.active { display: flex; }
 
     .dropdown-fullscreen {
       position: static;
@@ -1174,17 +1062,11 @@
       box-shadow: none;
     }
 
-    .dropdown.open .dropdown-fullscreen {
-      display: block !important;
-    }
+    .dropdown.open .dropdown-fullscreen { display: block !important; }
 
-    .solution-wrapper {
-      flex-direction: column;
-    }
+    .solution-wrapper { flex-direction: column; }
 
-    .solution-box {
-      flex: 1 1 100%;
-    }
+    .solution-box { flex: 1 1 100%; }
   }
 </style>
 
@@ -1199,38 +1081,58 @@
     navLinks.classList.toggle('active');
   });
 
-  // ✅ Desktop Fullscreen Dropdown
-  dropdown.addEventListener('mouseenter', () => {
+  // ✅ Desktop Dropdown (Click to toggle, stays open)
+  dropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
     if (window.innerWidth > 992) {
-      dropdownMenu.style.display = 'block';
-    }
-  });
-
-  dropdown.addEventListener('mouseleave', () => {
-    if (window.innerWidth > 992) {
-      dropdownMenu.style.display = 'none';
-    }
-  });
-
-  // ✅ Mobile dropdown toggle
-  dropdown.addEventListener('click', () => {
-    if (window.innerWidth <= 992) {
-      dropdown.classList.toggle('open');
-    }
-  });
-
-  // ✅ Automatically set active menu based on current page
-  const currentPage = window.location.pathname.split("/").pop(); // e.g., "index.html"
-  const navItems = document.querySelectorAll(".nav-links a");
-
-  navItems.forEach(item => {
-    if(item.getAttribute("href") === currentPage){
-      item.classList.add("active");
+      const isOpen = dropdown.classList.toggle('open');
+      dropdownMenu.style.display = isOpen ? 'block' : 'none';
+      if (isOpen) {
+        clearActiveLinks();
+      } else {
+        setActivePage();
+      }
     } else {
-      item.classList.remove("active");
+      const isOpen = dropdown.classList.toggle('open');
+      if (isOpen) {
+        clearActiveLinks();
+      } else {
+        setActivePage();
+      }
     }
   });
+
+  // ✅ Click outside to close dropdown
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target) && window.innerWidth > 992) {
+      dropdown.classList.remove('open');
+      dropdownMenu.style.display = 'none';
+      setActivePage();
+    }
+  });
+
+  // ✅ Auto highlight current page
+  const navItems = document.querySelectorAll(".nav-links a");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  function clearActiveLinks() {
+    navItems.forEach(item => item.classList.remove("active"));
+  }
+
+  function setActivePage() {
+    navItems.forEach(item => {
+      if (item.getAttribute("href") === currentPage) {
+        item.classList.add("active");
+      }
+    });
+  }
+
+  // Initial set
+  setActivePage();
 </script>
+
+
+
 
 
 
@@ -1267,38 +1169,6 @@
 
     <!-- === SECTION HERO END ===  -->
 
-    <!-- === SECTION IFRAME START ===  -->
-
-    <!-- <section class="video-section" data-aos="fade-up" data-aos-duration="1500" id="howitwork"> -->
-      <!-- <h2 class="video-heading">Watch How It Works</h2>
-
-      <div class="video-thumbnail-wrapper" id="videoContainer"> -->
-        <!-- Thumbnail -->
-        <!-- <img
-          src="assets/img/Video-thumbnail.png"
-          alt="Video Thumbnail"
-          class="video-thumbnail-img"
-        /> -->
-
-        <!-- Play Button -->
-        <!-- <div class="play-button" onclick="loadVideo()">
-          <svg width="80" height="80" viewBox="0 0 100 100">
-            <circle
-              cx="50"
-              cy="50"
-              r="48"
-              stroke="#f8e88d"
-              stroke-width="4"
-              fill="white"
-            />
-            <polygon points="40,30 70,50 40,70" fill="#f8e88d" />
-          </svg>
-        </div> -->
-
-      
-    <!-- </section>!--> 
-
-    <!-- === SECTION IFRAME END ===  -->
 
     <!-- === SECTION GREEN START ===  -->
     <section class="section--green" data-aos="fade-up" data-aos-duration="1500">
@@ -1463,122 +1333,7 @@
 
     <!--===============  SECTION TAB ENDS ===============-->
 
-    <!-- <section class="section--tab container">
-      <div class="section--tab__heading">
-        <h1
-          class="ara-fw-semi-bold"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          Offer Exceptional Service to Customers, <br />
-          Every Single Day
-        </h1>
-      </div>
-      <div class="section--tab__para">
-        <p
-          class="ara-line-height-1-5"
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-bottom"
-          data-aos-duration="1000"
-        >
-          we prioritize excellence in every interaction. With innovation,
-          dedication, and seamless support, <br />
-          we deliver top-tier service—every single day.
-        </p>
-      </div>
-      <div class="container mx-auto">
-        <div class="tab-header">
-          <button class="tab-btn active tab-btn-1" data-tab="tab1">
-            Ensure cohesion
-          </button>
-          <button class="tab-btn tab-btn-2" data-tab="tab2">
-            Maintain authority
-          </button>
-          <button class="tab-btn tab-btn-3 ms-2" data-tab="tab3">
-            Deliver rapid outcomes
-          </button>
-        </div>
-        <div class="tab-content active first-tab p-5" id="tab1">
-          <div class="tab-content-left">
-            <div class="animate">
-              <h3 class="ms-2">Ensure cohesion</h3>
-              <p class="ara-line-height-1-5 p-2">
-                Creating a unified, seamless experience where every element
-                works together effortlessly for maximum efficiency and impact.
-              </p>
-            </div>
-            <div class="mt-4 arrow-box d-flex gap-4 ms-2">
-              <div class="circle">
-                <i class="ri-arrow-left-s-line" id="arrow-reverse"></i>
-              </div>
-              <div class="circle">
-                <i class="ri-arrow-right-s-line" id="arrow-forward"></i>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content-right">
-            <img
-              src="assets/img/zh-ann-case-study.png"
-              class="img-fluid"
-              alt="Illustration"
-            />
-          </div>
-        </div>
-        <div class="tab-content p-5 second-tab" id="tab2">
-          <div class="tab-content-left">
-            <div class="animate-2">
-              <h3 class="ms-2">Maintain authority</h3>
-              <p class="ara-line-height-1-5 p-2">
-                Establishing trust through expertise, precision, and
-                innovation—delivering solutions with confidence and reliability.
-              </p>
-            </div>
-            <div class="mt-4 arrow-box d-flex gap-4 ms-2">
-              <div class="circle">
-                <i class="ri-arrow-left-s-line" id="arrow-reverse"></i>
-              </div>
-              <div class="circle">
-                <i class="ri-arrow-right-s-line" id="arrow-forward"></i>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content-right">
-            <img
-              src="assets/img/zh-ann-case-study.png"
-              class="img-fluid"
-              alt="Illustration"
-            />
-          </div>
-        </div>
-        <div class="tab-content p-5 third-tab" id="tab3">
-          <div class="tab-content-left">
-            <div class="animate-3">
-              <h3 class="ms-2">Deliver rapid outcomes</h3>
-              <p class="ara-line-height-1-5 p-2">
-                Accelerating success with agile solutions—delivering swift,
-                high-impact results without compromising quality.
-              </p>
-            </div>
-            <div class="mt-4 arrow-box d-flex gap-4 ms-2">
-              <div class="circle">
-                <i class="ri-arrow-left-s-line" id="arrow-reverse"></i>
-              </div>
-              <div class="circle">
-                <i class="ri-arrow-right-s-line" id="arrow-forward"></i>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content-right">
-            <img
-              src="assets/img/zh-ann-case-study.png"
-              class="img-fluid"
-              alt="Illustration"
-            />
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!--===============  SECTION TAB END ===============-->
+    
 
     <!--===============  SECTION CORE VALUE START ===============-->
 
@@ -1586,7 +1341,7 @@
   id="value"
   data-aos="fade-up"
   data-aos-duration="1500"
-  style="padding: 80px 0; text-align: center;"
+  style="padding: 80px 0; text-align: center; background: #f7f9fc;;"
 >
   <div style="margin-bottom: 50px;">
     <h2 style="font-size: 32px; color: #000000; margin-bottom: 10px; font-weight: 600;">
@@ -1732,6 +1487,7 @@
 </div>
 
 <style>
+  
 .promise-section {
   display: flex;
   align-items: center;
@@ -1739,6 +1495,7 @@
   gap: 40px;
   padding: 50px;
   max-width: 1200px;
+  
   margin: auto;
 }
 
@@ -2310,7 +2067,7 @@
               <i class="ri-customer-service-line ms-2 fs-1"></i>
               <div class="ms-2 mt-3">
                 <h6 class="ara-fw-semi-bold">For Customer Support</h6>
-                <p>Mail at : ceoarkgobalomniverse.com </p>
+                <p>Mail at :ceo@arkglobalomniverse.com </p>
                 <p>Call at : 8903734567</p>
               </div>
             </div>
@@ -2320,7 +2077,7 @@
               <span class="ms-1 fs-1"> 🎯</span>
               <div class="ms-2 mt-3">
                 <h6 class="ara-fw-semi-bold">For Sales & Marketing</h6>
-                <p>Mail at : ceoarkgobalomniverse.com</p>
+                <p>Mail at : ceo@arkglobalomniverse.com</p>
                 <p>Call at : 8903734567</p>
               </div>
             </div>
@@ -2540,10 +2297,12 @@ faqItems.forEach(item => {
 
     <!-- ============== SECTION CONNECT START ============ -->
     <section
-      class="section--connect container-fluid p-5"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
+  class="section--connect container-fluid p-5"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+  style="margin-bottom: 1px;"
+>
+
       &nbsp;
       <div class="container text-center">
         <h3 class="ara-fw-semi-bold pt-3">
@@ -2555,37 +2314,7 @@ faqItems.forEach(item => {
     </section>
     <!-- ============== SECTION CONNECT END =============== -->
 
-    <!-- ============== SECTION JOURNEY START ================ -->
-    <!-- <section
-      class="section-journey"
-      data-aos="fade-up"
-      data-aos-anchor-placement="top-bottom"
-      data-aos-duration="1000"
-    >
-      <h6 class="text-center ara-fw-semi-bold">Explore Our Journey</h6>
-      <div class="container">
-        <div class="row">
-          <div class="mt-4 d-flex flex-wrap justify-content-center text-center">
-            <h4>
-              <a href="" class="ara-fw-semi-bold text-dark linkedin">
-                LinkedIn</a
-              >
-            </h4>
-            <h4>
-              <a href="" class="ara-fw-semi-bold text-dark instagram">
-                Instagram</a
-              >
-            </h4>
-            <h4><a href="" class="ara-fw-semi-bold text-dark"> Youtube</a></h4>
-            <h4>
-              <a href="" class="ara-fw-semi-bold text-dark dribble"> Dribble</a>
-            </h4>
-            <h4><a href="" class="ara-fw-semi-bold text-dark X"> X</a></h4>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- ================= SECTION JOURNEY END  ===================-->
+  
 
     <!-- ================ SECTION FOOTER START ============= -->
   <section class="section-footer container-fluid" style="background: linear-gradient(to right, #022051, #022051);">
